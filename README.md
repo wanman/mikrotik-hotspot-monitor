@@ -1,302 +1,282 @@
-# MIKROTIK HOTSPOT MONITOR (MIKHMON)
-Mikrotik Hotspot Monitor adalah aplikasi web PHP untuk menggantikan User Manager yang tidak didukung dibeberapa tipe RB Mikrotik.
+ MIKROTIK HOTSPOT MONITOR (MIKHMON)
 
-## TENTANG  
+Mikrotik Hotspot Monitor is a PHP web application to replace User Manager which is not supported in some RB Mikrotik type.
 
-1. Aplikasi ini menggunakan port API untuk terhubung ke Mikrotik
-    - API port 8728 
-      ([routeros-api](https://wiki.mikrotik.com/wiki/API_PHP_class))
+ ABOUT
 
-2. Pastikan port API sudah aktif dan Jam Tanggal di Mikrotik sudah update sesuai wilayah masing-masing. Untuk pengaturan Jam dan Tanggal bisa baca [di sini](http://www.mikrotik.co.id/artikel_lihat.php?id=55).
+This app uses the API port to connect to Mikrotik
 
-3. Sudah dites di Router OS 3.25, 5.22, 6.3+
+API port 8728 ( routeros-api )
+Make sure the API port is active and Date Hours in Mikrotik are updated according to their respective region. For Clock and Date settings can read here .
 
-## FITUR  
-1. Multi platform (Windows, GNU/Linux, Android, OpenWRT)
-2. Menampilkan User Hotspot yang aktif dan masa aktifnya.
-3. Menambah, edit dan hapus User Profile.
-4. Tersedia dua mode expired (Hapus dan Notifikasi)
-    - Mode Expired "Hapus" akan menghapus data user yang sudah habis masa aktifnya.
-    - Mode Expired "Notifikasi" tdak akan menghapus data user.
-    - Mode Expired Hapus dan Notifikasi akan menampilkan notifikasi expired di laman login hotspot, untuk user yang sudah habis masa aktifnya.
-    - Gunakan template hotspot3 dari Mikhmon atau template hospot yang menggunakan metode yang sama. Tutorial login hotspot dengan expired bisa di cek di  [Video](https://goo.gl/hVUnjD).
-5. Menampilkan daftar User Hotspot berdasarkan User Profile.
-    - Filter berdasarkan Username, Server, dan Tanggal/Kode Generate.
-    - Hapus User.
-    - Disable/Enable User.
-    - Show/Hide Password.
-6. Generate Voucher.
-    - Generate Kode Voucher.
-    - Generate User Password.
-    - Generate Custom User Password.
-7. Cetak Voucher. (Ukuran kertas A4 atau F4)
-    - Generate Kode Voucher.
-    - Generate User Password.
-    - Generate Custom User Password.
-    - Pilihan Huruf untuk Kode Voucher dan User Password [abcd, ABCD, aBcD].
-    - Generate Kode Voucher/User Password maksimal 99 untuk sekali generate, bisa diulangi lagi.
-8. Custom warna Voucher.
-9. Tools :
-    - Add Remove DNS Static untuk blok website.
-    - Log Hotspot Mikrotik.
-    - History.
-    - Status, untuk cek voucher dari sisi client.
-    
-## PENGGUNAAN  
-1. Aplikasi ini bisa dijalankan menggunakan web server dengan PHP.
+Already tested on Router OS 3.25, 5.22, 6.3+
 
-    Download web server :
-    - Windows Web Server [USBWebserver](http://www.usbwebserver.net/downloads/USBWebserver%20v8.6.zip "USBWebserver")
-    - Android Web Server [PlayStore Bit Web Server](https://play.google.com/store/apps/details?id=com.andi.serverweb&hl=en "Bit Web Server") (berbayar), [allfreeapk.com Bit Web Server](https://m.allfreeapk.com/search.html?q=bit-web-server-php-mysql-pma "Bit Web Server") (gratis)
-    
+ FEATURES
 
-2. Install Web Server
+Multi platform (Windows, GNU / Linux, Android, OpenWRT)
+Displays the current and active User Hotspot.
+Add, edit and delete the User Profile.
+There are two expired modes (Delete and Notification)
+Expired mode "Delete" will delete user data that have expired.
+Expired mode "Notifications" will not delete user data.
+Expired Delete and Notification Mode will display an expired notification on the hotspot login page, for the expired user.
+Use a hotspot3 template from Mikhmon or a hospot template that uses the same method. Hotspot login tutorial with expired can be checked in Video .
+Displays a list of User Hotspots based on the User Profile.
+Filter by Username, Server, and Date / Generate Code.
+Delete User.
+Disable / Enable User.
+Show / Hide Password.
+Generate Voucher.
+Generate Voucher Code.
+Generate User Password.
+Generate Custom User Password.
+Print Voucher. (A4 or F4 paper size)
+Generate Voucher Code.
+Generate User Password.
+Generate Custom User Password.
+Choice of Letters for Voucher Code and User Password [abcd, ABCD, aBcD].
+Generate Voucher Code / User Password maximum of 99 to once generate, can be repeated again.
+Custom Color Voucher.
+Tools:
+Add Remove DNS Static to block website.
+Mikrotik Hotspot Log.
+History.
+Status, to check voucher from client side.
+ USE
 
-    Web Server Windows
-    - Download USBWebserver, buat folder webserver di drive D:, extract USBWebserver ke folder tersebut.
-    - Download Mikrotik Hotspot Monitor, extract folder mikhmon ke folder root webserver.
-    - Jalankan USBWebserver kemudian buka di browser http://localhost:8080/mikhmon/
-    
-    Web Server Android
-    - Download Bit Web Server, install di Android.
-    - Download Mikrotik Hotspot Monitor, extract folder mikhmon ke folder www memory internal Android.
-    - Jalankan Bit Web Server kemudian buka di browser http://localhost:8080/mikhmon/
-    
-3. Login dengan user admin Mikhmon (user: admin | pass:  1234).
+This application can be run using a web server with PHP.
 
-4. Sesuaikan User Profile, nama usaha harga voucher di laman setup.
+Download web server:
 
-5. Tambahkan User Profile ke Mikrotik dari aplikasi Mikhmon. Setelah itu aplikasi siap untuk generate voucher.
+Windows Web Server USBWebserver
+Android Web Server PlayStore Bit Web Server (paid), allfreeapk.com Bit Web Server (free)
+Install Web Server
 
-    Tutorial lebih lengkap kunungi [laksa19.github.io](https://laksa19.github.io/)
-     
-6. Logo di cetak voucher di letakkan di folder img dalam folder app dengan format (logo.png).
+Web Server Windows
 
-## Changelog 
+Download USBWebserver, create webserver folder in drive D :, extract USBWebserver to that folder.
+Download Mikrotik Hotspot Monitor, extract the mikhmon folder to the webserver root folder.
+Run USBWebserver then open in browser http: // localhost: 8080 / mikhmon /
+Web Server Android
 
-### Versi 2018
+Download Bit Web Server, install on Android.
+Download Mikrotik Hotspot Monitor, extract the mikhmon folder to the Android internal memory folder www.
+Run Bit Web Server then open in browser http: // localhost: 8080 / mikhmon /
+Login with the admin user Mikhmon (user: admin | pass: 1234).
 
-Download [update.zip](https://laksa19.github.io/download/update.zip)
+Customize User Profile, business name of voucher price on the setup page.
+
+Add a User Profile to Mikrotik from Mikhmon application. After that the application is ready to generate voucher.
+
+More complete tutorial kunungi laksa19.github.io
+
+Logo in voucher print is placed in img folder in app folder with format (logo.png).
+
+ Changelog
+
+ Version 2018
+
+Download update.zip
 
 23-2-2018
 
-1. Pembaruan User Profile mode expired Hapus.
-    - Sekarang diambahkan  jeda atau tenggang untuk menghapus user dari Mikrotik, default 5menit. Jadi ada kesempatan untuk notifikasi Expired saat user mencoba login kembali.
-    - Tutorial Membuat Login Hotspot dengan notifikasi Expired : [YouTube Laksa19](https://goo.gl/uuFZfd)
-    - Template jadi dengan notifikasi Expired [hotspot3](https://goo.gl/Qw88vK)
-2. Penambahan opsi Huruf saat generate. Sekarang ada 3 pilihan [abcd, ABCD, aBcD]
-3. Penambahan Show/Hide Passworddi user list.
-4. Penambahan opsi Export/Import Setup Mikhmon. Export ke Mikrotik/Import dari Mikrotik.
-
+Update User Profile expired mode Remove.
+Now added a pause or grace to remove a user from Mikrotik, default is 5min. So there is an opportunity for Expired notifications when the user tries to login again.
+Tutorial Create Login Hotspot with Expired notification: YouTube Laksa19
+Template so with Expired hotspot3 notification
+Added Letters when generated. Now there are 3 choices [abcd, ABCD, aBcD]
+Addition of Show / Hide Password in user list.
+Added Export / Import Setup Mikhmon. Export to Mikrotik / Import from Mikrotik.
 20-2-2018
 
-Penambahan Mode Expired, menjadi mode Hapus dan Notifikasi.
-1. Mode Expired "Hapus" akan menghapus data user yang sudah habis masa aktifnya.
-2. Mode Expired "Notifikasi" tdak akan menghapus data user, namun akan menampilkan notifikasi expired di laman login hotspot untuk user yang sudah habis masa aktifnya.(Gunakan template hotspot3 dari Mikhmon atau template hospot yang menggunakan metode yang sama).
-3. Profile yang bisa mengubah mode expired menjadi "Hapus" atau "Notifikasi" adalah profile yang terdaftar di laman Setup.
-4. Profile yang dibuat manual silahkan pilih "No Expired" pada kolom Mode Expired.
-5. Profile yang dibuat manual tidak akan bisa mengubah mode expired menjadi "Hapus" atau "Notifikasi".
-6. Untuk mengaktifkan kembali user expired cukup klik tombol Reset di info user, ini bisa diakses dari user list.
+The addition of Expired Mode, to the Delete and Notification mode.
 
+Expired mode "Delete" will delete user data that have expired.
+Expired mode "Notifications" will not delete user data, but will display an expired notification on the hotspot login page for the expired user. (Use hotspot3 template from Mikhmon or tempot template using the same method).
+A profile that can change the expired mode to "Delete" or "Notification" is the profile listed on the Setup page.
+Profile created manually please select "No Expired" in Expired Mode column.
+Manually created profiles will not be able to change the expired mode to "Delete" or "Notifications".
+To re-enable the expired user simply click the Reset button in the user info, it can be accessed from the user list.
 17-2-2018
 
-Penambahan fitur cetak voucher yang digenerate sebelumnya. Diakses melalui userlist. <br> Fitur ini hanya bisa digunakan setelah generate voucher dari Mikhmon build 2052. <br> Cetak kembali berdasarkan tanggal dan kode unik saat genetare.
+Additional features of the previous generated voucher printing. Accessed through userlist. 
+This feature can only be used after a generic voucher from Mikhmon build 2052. 
+Reprint by date and unique code when genetare.
 
 7-2-2018
 
-Perbaikan update profile.
+Improved update profile.
 
 7-2-2018
 
-1. Perubahan edit User Profile.
-2. Penambahan Disable/Enable user di userlist.
-3. Penambahan filter berdasarkan server hotspot dan tanggal generate.
-
+Change User Profile edit.
+Added Disable / Enable user in userlist.
+Added filters based on hotspot server and date generate.
 4-2-2018
 
-Perbaikan userlist dan penambahan tombol filter user berdasarkan profile.
+Improved userlist and addition of user filter button based on profile.
 
 3-2-2018
 
-1. Remove tab User Aktif dan Masa Aktif di laman Dashboard.
-2. Menambahkan modal untuk cek massa aktif user, dengan klik/tap user yang aktif.
-3. Remove folder userlist (merampingkan aplikasi)
-4. Perbaikan laman Dahsboard.
-5. Penambahan modal untuk info user di laman userlist.
-
+Remove the Active and Active Users tab on the Dashboard page.
+Added capital to the user's active mass check, with the click / tap of the active user.
+Remove userlist folder (streamline application)
+Improved Dahsboard page.
+Added capital for user info on the userlist page.
 1-2-2018
 
-1. Perbaikan OTA Update.
-2. Dukungan untuk RouterOS v3.25 dan v5.22.
-
+Repair OTA Update.
+Support for RouterOS v3.25 and v5.22.
 26-1-2018
 
-1. Perbaikan OTA Update. Catatan hak akses penuh pada flder root web server.
-2. Penambahan filter di userlist.
-
+Repair OTA Update. Note full permissions on the flder root web server.
+Added filter in userlist.
 23-1-2018
 
-1. Perbaikan remove user aktif di laman dashboard.
-2. Perubahan mode update menjadi OTA update.
-
+Repair the remove active user on the dashboard page.
+Change update mode to OTA update.
 22-1-2018
 
-Menghilangkan baris password di laman status (cek detail voucher).
+Eliminate the password line on the status page (check voucher details).
 
 21-1-2018
 
-Penambahan kolom X untuk menghapus user, user acive, profile, dan dns di dns static.
+Added column X to remove user, user acive, profile, and dns in static dns.
 
 20-1-2018
 
-1. Perubahan cek update Mikhmon dan perbaikan performa.
-2. Penambahan kolom MAC Address dan Login By di laman dashboard.
-3. Perbaikan cek masa aktif di laman dashboard dan status.
-4. Penambahan tombol reboot Mikrotik di laman setup.
-
-
+Changes check Mikhmon update and performance improvements.
+Added MAC Address and Login By fields on the dashboard page.
+Repair active checks on dashboard and status pages.
+Added the Mikrotik reboot button on the setup page.
 19-1-2018
 
-Perbaikan laman setup (durasi kolom kedua). Setelah update klik Simpan dilaman setup.
+Fixed setup page (duration of second column). After the update click Save in the setup area.
 
 14-1-2018
 
-Perbaikan cetak voucher. (Tidak ada voucher yang terpotong ke laman berikutnya).
+Repair voucher printing. (No vouchers are truncated to the next page).
 
 13-1-2018
 
-1. Perbaikan Generate Voucher (Penambahan pilihan panajang Username). Untuk Kode Voucher 2x panjang Username.
-2. Perubahan Setup Voucher Note menjadi DNS NAME. (Sesuaikan DNS Name di laman Setup).
-3. Perbaikan Cetak Voucher.
-4. Penambahan QR Code di cetak Voucher
-
+Repair Generate Voucher (Added option panajang Username). For Voucher Code 2x Username length.
+Setup Voucher Note changes to DNS NAME. (Adjust DNS Name on the Setup page).
+Repair Print Voucher.
+Added QR Code in Voucher Print
 10-1-2018
 
-Perbaikan untuk dukungan login by mac. Setelah update Mikhmon, silahkan update user profile dari Mikhmon.
+Fix for support logged by mac. After Mikhmon update, please update user profile from Mikhmon.
 
 9-1-2018
 
-1. Perubahan form user profile. Rate limit Upload/Downlod menjadi input manual. Bertujuan agar lebih leluasa membuat rate limit.
-2. Perubahan Log Hotspot. Sekarang menampilkan log terbaru diuruan teratas.
-
+Change the user profile form. Rate limit Upload / Downlod into manual input. Aiming to make it more flexible to make rate limit.
+Hotspot Log Change. Now showing the latest top-rated logs.
 1-7-2018
 
-1. Penambahan Byte Out di laman Dashboard.
-2. Penambahan 5 User Profile.
-3. Penambahan Durasi dan Kuota masing-masing 5.
-4. Penambahan Sisa Kuota di status dan logout template hotspot.
-
+Added Byte Out on the Dashboard page.
+Added 5 User Profile.
+Addition of Duration and Quota respectively 5.
+Quota Remaining Addition in the status and logout of the hotspot template.
 5-1-2018
 
-1. Penambahan notifikasi update.
-2. Perbaikan laman status.
-3. Drop support mikhmon-standalone.
-
+Added update notification.
+Fixed status page.
+Drop support mikhmon-standalone.
 4-1-2018
 
-Perbaikan cetak voucher (perbaikan detail voucher dan penambahan logo).
+Repair voucher printing (fix voucher details and logo addition).
 
 1-1-2018
 
-Perbaikan laman status untuk cek voucher.
+Repair status page for voucher check.
 
 29-12-2017
-    
-   1. Full menggunakan RouterOS API (Tidak memerlukan koneksi SSH lagi).
-   2. Perbaikan di generate voucher. (custom jumlah voucher 1-99 untuk sekali generate).
-   3. Perbaikan di cetak voucher.
-   4. Perbaikan Setup.
-   5. Perbaikan laman dashboard.
-   6. Perbaikan laman status (untuk cek masa aktif voucher)
 
-### Versi 2017
+Full using RouterOS API (Does not require SSH connection anymore).
+Improvements in the resulting voucher. (custom number of vouchers 1-99 to generate once).
+Repair in voucher print.
+Repair Setup.
+Improved dashboard page.
+Fixed status page (for voucher lifetime check)
+ Version 2017
 
 16-12-2017
 
-   1. Penambahan 5 profile, total 10 profile yang bisa digunakan untuk berbagai macam paket hotspot wifi.
-   2. Penambahan kolom server hotspot ditiap form generate voucher, ini memungkinkan untuk membuat voucher atau user hotspot dengan batasan server hotspot. Jadi voucher hanya bisa digunakan di server hotspot tertentu. Catatan: Sesuaikan nama server  hotspot Mikrotik di laman setup mikhmon.
-   3. Perbaikan tampilan desktop, kini dibuat lebih lebar untuk tampilan desktop dan menyesuakan layar saat digunakan di Android.
-   4. Perubahan laman dashboard, Header tabel sisa voucher sekarang menggunakan nama profile, bertujuan untuk memudahkan admin mengenali sisa voucher.
-
+The addition of 5 profiles, a total of 10 profiles that can be used for various wifi hotspot packages.
+The addition of hotspot server columns in each form generate vouchers, it is possible to create vouchers or hotspot users with hotspot server restrictions. So vouchers can only be used in certain hotspot servers. Note: Adjust the name of the Mikrotik hotspot server on the michmon setup page.
+Improved desktop appearance, now made wider for desktop viewing and customizing the screen when used on Android.
+Dashboard page changes, the voucher table header now uses the profile name, aiming to make it easier for the admin to recognize the rest of the voucher.
 29-11-2017
 
-   Perbaikan form setup, konfirmasi pada saat reset config.
+Repair the setup form, confirm it when reset config.
 
 28-11-2017
 
-   1. Penambahan form Log Hotspot.
-   2. Penambahan form History Remove User, untuk melacak user yang telah dihapus.
-
+Added Hotspot Log form.
+Added History Remove User form, to track deleted users.
 26-11-2017
 
-   1. Update setting warna voucher agar tetap menyimpan settingan sebelumnya.
-   2. Penambahan cetak di setiap form generate 1 voucher.
-   
+Update the voucher color settings to keep the previous settings.
+Adding prints on each form generates 1 voucher.
 21-11-2017
 
-   1. Drop operator dan perbaikan resetconfig.
-   2. Add Remove DNS Static untuk blok website.
-   
+Drop operator and repair resetconfig.
+Add Remove DNS Static to block website.
 10-11-2017
 
-   Penambahan generate user password manual input. (Perubahan di mikhmon: index.php, genkv.php, genkvs.php, genupm.php, genvoucher.php, genvouchers.php, profileadd.php, profilerm.php, profileset.php, vcolorconf.php).
+Added input user password manual input. (Changes in mikhmon: index.php, genkv.php, genkvs.php, genupm.php, genvoucher.php, genvouchers.php, profileadd.php, profilerm.php, profileset.php, vcolorconf.php).
 
 09-11-2017
 
-   Perubahan struktur menu.
+Changes to the menu structure.
 
 07-11-2017
 
-   Perbaikan tamplate hotspot. Penjelasan dibagian [PENGGUNAAN](https://github.com/laksa19/mikrotik-hotspot-monitor#penggunaan) poin 6.
+Repair hotspot tamplate. Explanation section USE points 6.
 
 05-11-2017
 
-   Penambahan laman status untuk cek masa aktif vouvher pelanggan. (Perubahan di status: index.php, api.php).
+Added status page for customer's voucher voucher check. (Changes in status: index.php, api.php).
 
 04-11-2017
 
-   1. Penambahan fitur ganerate kode voucher, jadi pelanggan hanya memasukkan kode login saja untuk login. (Perubahan di mikhmon: index.php, file baru: genkv.php, genkvs.php, kvouchers.php, printkvs.php).
-   2. Upload template hotspot untuk mendukung login menggunakan kode voucher.
-
+The addition of ganerate feature voucher code, so customer only enter login code only to login. (Changes in mikhmon: index.php, new file: genkv.php, genkvs.php, kvouchers.php, printkvs.php).
+Upload a hotspot template to support login using voucher code.
 28-10-2017
 
-   1. Perbaikan di file setup.php.
-   2. Penambahan jam Mikrotik, untuk mengetahui apakah jam di Mikrotik sudah sesuai. (Perubahan: index.php).
-
+Fixed in setup.php file.
+The addition of Mikrotik clock, to know whether the clock in Mikrotik is appropriate. (Change: index.php).
 10-10-2017
 
-   Penambahan form untuk pengaturan warna di cetak voucher (Perubahan: printv.php, genvouchers.php, vcolorconf.php, vcolors.php).
+Adding form to color settings in voucher print (Changes: printv.php, genvouchers.php, vcolorconf.php, vcolors.php).
 
 09-10-2017
 
-   Perbaikan Setup (perubahan : index.php, setup.php).
+Repair Setup (change: index.php, setup.php).
 
 07-10-2017
 
-   1. Menambahkan opsi untuk auto reload laman index (perubahan: index.php).
-   2. Perbaikan dan penambahan setup aplikasi (perubahan : config.php, login.php, setup.php, conntest.php, resetconfig.php).
-
+Added an option to auto reload the index page (change: index.php).
+Repair and addition of application setup (change: config.php, login.php, setup.php, conntest.php, resetconfig.php).
 06-10-2017
 
-   Menambahkan hak akses user :  1. Administrator,  2. Operator.
-   
+Adding user permissions: 1. Administrator, 2. Operator.
+
 05-10-2017
 
-  1. Penambahan setup.php untuk memudahkan edit file config.php
-  2. Penambahan halaman login.
-  3. Beberapa penyesuaian lainnya.  
-  
+Added setup.php to make it easy to edit config.php file
+Added login page.
+Some other adjustments.
 04-10-2017
 
-  1. Penyesuaian config.php
-  2. Penyesuaian index.php
-  3. Penambahan User Lists, sekarang menjadi 5
-  4. Penyederhanaan pembuatan Profile
-  5. Penambahan fitur pada generate voucher
-       - Batasan Durasi (Limit Uptime)
-       - Batasan Kuota (Limit Bytes Out)
-  6. Penyesuaian cetak voucher
-
+Config.php adjustment
+Adjustment of index.php
+Added User Lists, now to 5
+Simplifying Profile Creation
+Add feature to generate voucher
+Limit Uptime
+Limit Bytes Out
+Adjustment of voucher printing
 03-10-2017
 
-  1. Upload pertama.
+First upload.
